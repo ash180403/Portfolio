@@ -1,73 +1,89 @@
 import { useState } from "react";
-import dashboard from "../assets/dashboard-app.webp";
-import ecommerce from "../assets/e-commerce-app.png";
-import food from "../assets/food-app.jpg";
-import travel from "../assets/travel-app.jpg";
+import sparkidsImage from "../assets/sparkids.png";
+import radiationImage from "../assets/rad.png";
+import { FaGithub, FaLink } from "react-icons/fa";
 import RevealOnScroll from "../Ui/RevealOnScroll";
 
 function Projects() {
   const [projects] = useState([
     {
-      image: dashboard,
-      name: "Dashboard App",
+      image: sparkidsImage,
+      name: "Sparkids: E-Learning Platform",
       brief:
-        "Scalable Dashboard App with CRUD operations manages all the bookings, users, guests and services.",
+        "Engineered a scalable, full-stack E-Learning platform with a microservices architecture using Spring Boot and React.js. It features comprehensive RESTful APIs for course content and a secure user authentication system.",
+      technologies: ["Java", "Spring Boot", "React.js", "MySQL", "MongoDB"],
+      liveLink: "https://ash180403.github.io/sparkids/", 
+      githubLink: "https://github.com/ash180403/sparkids", 
     },
     {
-      image: ecommerce,
-      name: "E-Commerce App",
+      image: radiationImage,
+      name: "Radiation Dose Calculation",
       brief:
-        "Scalable Dashboard App with CRUD operations manages all the bookings, users, guests and services.",
-    },
-    {
-      image: food,
-      name: "Food App",
-      brief:
-        "Scalable Dashboard App with CRUD operations manages all the bookings, users, guests and services.",
-    },
-    {
-      image: travel,
-      name: "Travel App",
-      brief:
-        "Scalable Dashboard App with CRUD operations manages all the bookings, users, guests and services.",
+        "Designed a data processing pipeline in Python for radiation dose estimation. Utilized the Geant4 toolkit for Monte Carlo simulations to predict dose distribution and improve computational efficiency by 30%.",
+      technologies: ["Python", "Geant4", "Monte Carlo"],
+      githubLink: "https://github.com/ash180403/radiation-dose-ml", 
     },
   ]);
+
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center font-mono justify-center py-20"
+      className="min-h-screen font-sans flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="max-w-3xl text-4xl font-semibold mb-12 bg-gradient-to-r from-teal-500 to-indigo-600 bg-clip-text text-transparent text-center ">
-            Features Projects
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-16 text-center bg-gradient-to-r from-teal-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
+            My Projects
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="p-6 rounded-xl flex flex-col items-center text-center border-2 border-white/10 hover:border-blue-500/30 hover:shadow-[9_2px_8px_rgba(59,130,246,0.2)] hover:-translate-y-1 transition-all hover:bg-cyan-900 "
+                className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-cyan-500/30"
               >
-                <h3 className="font-semibold text-xl mb-4">{project.name}</h3>
-                <p className="text-gray-300 mb-4">{project.brief} </p>
-                <div className="flex flex-wrap sm:items-center gap-2 mb-4">
-                  {["React", "Supabase", "Vercel"].map((tech, index) => (
-                    <span
-                      key={index}
-                      className="bg-blue-500/10 text-blue-400 py-1 px-3 rounded-full text-balance hover:bg-blue-500/20 hover:shadow-[9_2px_8px_rgba(59,130,22.46,0.2)] transition "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  <div className="flex flex-col text-center my-5 py-3 justify-center gap-3 border-2 border-white/10 hover:border-blue-500/30 hover:shadow-[9_2px_8px_rgba(59,130,22.46,0.2)]  cursor-pointer rounded-xl ">
-                    <p className="text-gray-200">View Project</p>
+                <div className="p-6">
+                  <div className="relative h-48 overflow-hidden rounded-xl mb-6 shadow-lg">
+                    <img
+                      src={project.image}
+                      alt={`${project.name} preview`}
+                      className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-100 mb-2 bg-gradient-to-r from-teal-400 to-indigo-600 bg-clip-text text-transparent">
+                    {project.name}
+                  </h3>
+                  <p className="text-gray-400 mb-4">{project.brief}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="bg-gray-800 text-teal-400 text-xs font-semibold px-3 py-1 rounded-full transition-colors duration-300 hover:bg-teal-500/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-4 mt-auto">
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-cyan-400 font-semibold text-sm hover:text-cyan-300 transition-colors"
+                      >
+                        <FaLink className="text-lg" />
+                        <span className="relative pb-1 after:bg-cyan-400 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300">Live Site</span>
+                      </a>
+                    )}
                     <a
-                      href="https://github.com/ISHAQ98"
-                      className="flex justify-between items-center font-bold text-blue-400 transition-colors hover:text-white"
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-purple-400 font-semibold text-sm hover:text-purple-300 transition-colors"
                     >
-                      {" "}
-                      <img src={project.image} alt={`${project.name}Image `} />
+                      <FaGithub className="text-lg" />
+                      <span className="relative pb-1 after:bg-purple-400 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300">GitHub</span>
                     </a>
                   </div>
                 </div>

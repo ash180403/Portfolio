@@ -1,6 +1,7 @@
-import profileImg from "../assets/profileImg.png";
+// import profileImg from "../assets/profileImg.png";
+import img from "../assets/portfolio_img.png";
 import { FiDownload } from "react-icons/fi";
-import resume from "../assets/resume.pdf";
+import resume from "../assets/Ashish_Resume.pdf";
 
 function Home() {
   return (
@@ -10,19 +11,18 @@ function Home() {
     >
       <div className="text-center z-10 px-4">
         <img
-          className="w-[200px] border-0 mt-20 rounded-full shadow-lg shadow-gray-500/70 lg:m-0 lg:max-w-[250px] object-cover object-bottom hover:translate-y-1 transition-all "
-          src={profileImg}
+          className="w-[300px] border-0 mt-20 rounded-full shadow-lg shadow-gray-500/70 lg:m-0 lg:max-w-[350px] object-cover object-bottom hover:translate-y-1 transition-all "
+          src={img}
           alt="Profile Image"
         />
       </div>
       <div className="text-center font-mono z-10 px-4">
         <h1 className="text-4xl md:text-5xl lg:text-6xl lg:max-w[500px] font-semibold mb-6 px-1 bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent leading-right ">
-          I am Ishaq Zinelabidine
+          I am Ashish Akteri
         </h1>
         <p className="text-gray-300 text-lg mb-8 max-w-lg mx-auto">
-          I am a frontend developer who loves creation interactive, scalable web
-          applications. My purpose is to build solutions that offer dynamic UI,
-          high performance and delightful UX.
+          I am a passionate and driven software engineering fresher with a strong foundation in Software concepts. Eager to
+begin my career by contributing to real-world projects and learning from experienced teams.
         </p>
         <div className="flex justify-center items-center space-x-4">
           <a
