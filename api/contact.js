@@ -11,8 +11,8 @@ export default async function handler(req, res) {
 
   try {
     await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>", // Replace with your verified sender
-      to: "your-email@example.com", // Where you want to receive messages
+      from: "Portfolio Contact ashishakteri@gmail.com",
+      to: "ashishakteri18@gmail.com", 
       subject: "New Contact Form Submission",
       html: `
         <h2>New Message from Portfolio</h2>
