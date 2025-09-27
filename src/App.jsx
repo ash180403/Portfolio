@@ -15,6 +15,7 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
+    
       {!isLoading && (
         <LoadingScreenAnimation onComplete={() => setIsLoading(true)} />
       )}
