@@ -42,8 +42,6 @@ const handleSubmit = async (e) => {
     setIsSubmitting(false);
   }
 };
-
-
   return (
     <section
       id="contact"
