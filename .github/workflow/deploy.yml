@@ -1,0 +1,33 @@
+# Workflow to build and deploy your site to GitHub Pages
+name: Deploy to GitHub Pages
+
+# Run this workflow on every push to the main branch
+on:
+  push:
+    branches: [ "main" ]
+
+# Allow the workflow to have write permissions
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checks out your repository's code
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      # Step 2: Sets up Node.js, installs dependencies, and builds the site
+      - name: Install and Build 🔧
+        run: |
+          npm install
+          npm run build
+
+      # Step 3: Deploys the built site to the gh-pages branch
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # The folder that contains your built website
+          publish_dir: ./dist
