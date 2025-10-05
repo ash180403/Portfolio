@@ -6,14 +6,14 @@ export default async function handler(req, res) {
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY);
-  console.log("API Key:", process.env.RESEND_API_KEY); 
+  console.log("API Key:", process.env.RESEND_API_KEY);
 
   const { name, email, message } = req.body;
 
   try {
     await resend.emails.send({
-      from: "Portfolio Contact <ashishakteri@gmail.com>",
-      to: "ashishakteri@gmail.com",
+      from: "Portfolio Contact <contact@portfolio.com>", // use your verified domain address
+      to: "ashishakteri@gmail.com", // your notification address (can be gmail here)
       subject: "New Contact Form Submission",
       html: `
         <h2>New Message from Portfolio</h2>
