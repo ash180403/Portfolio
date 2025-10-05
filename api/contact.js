@@ -1,21 +1,19 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, message } = req.body;
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  console.log("API Key:", process.env.RESEND_API_KEY); 
 
-  // Log the API key to verify it's loaded correctly (remove in production)
-  console.log("Using API key:", process.env.RESEND_API_KEY);
+  const { name, email, message } = req.body;
 
   try {
     await resend.emails.send({
       from: "Portfolio Contact <ashishakteri@gmail.com>",
-      to: "ashishakteri18@gmail.com", 
+      to: "ashishakteri18@gmail.com",
       subject: "New Contact Form Submission",
       html: `
         <h2>New Message from Portfolio</h2>
