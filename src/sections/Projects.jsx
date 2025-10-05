@@ -1,6 +1,7 @@
 import { useState } from "react";
 import sparkidsImage from "../assets/sparkids.png";
-import radiationImage from "../assets/rad.png";
+// import radiationImage from "../assets/rad.png";
+import AI_interview_assistant from "../assets/ai_app.png";
 import { FaGithub, FaLink } from "react-icons/fa";
 import RevealOnScroll from "../Ui/RevealOnScroll";
 
@@ -16,12 +17,13 @@ function Projects() {
       githubLink: "https://github.com/ash180403/sparkids", 
     },
     {
-      image: radiationImage,
-      name: "Radiation Dose Calculation",
+      image: AI_interview_assistant,
+      name: "AI_interview_assistant",
       brief:
-        "Designed a data processing pipeline in Python for radiation dose estimation. Utilized the Geant4 toolkit for Monte Carlo simulations to predict dose distribution and improve computational efficiency by 30%.",
-      technologies: ["Python", "Geant4", "Monte Carlo"],
-      githubLink: "https://github.com/ash180403/radiation-dose-ml", 
+        "This project is a sophisticated, AI-powered interview assistant built to streamline the technical screening process for Full Stack Developer roles. It provides a seamless, end-to-end experience for both the candidate and the interviewer, wrapped in a modern, 'Aurora Glass' UI that's both beautiful and intuitive. The application is built with React, TypeScript, and Redux for robust state management, leveraging the Google Gemini API for all intelligent tasks from resume parsing to interview scoring. All data is persisted locally",
+      technologies: ["React", "GeminiAPI", "ShadcdnUI", "Vercel"],
+      liveLink: "https://ai-interview-assiatant.vercel.app/",
+      githubLink: "https://github.com/ash180403/ai_interview_assistant", 
     },
   ]);
 
