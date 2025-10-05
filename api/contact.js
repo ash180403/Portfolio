@@ -9,6 +9,9 @@ export default async function handler(req, res) {
 
   const { name, email, message } = req.body;
 
+  // Log the API key to verify it's loaded correctly (remove in production)
+  console.log("Using API key:", process.env.RESEND_API_KEY);
+
   try {
     await resend.emails.send({
       from: "Portfolio Contact <ashishakteri@gmail.com>",
