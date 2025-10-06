@@ -1,7 +1,7 @@
 // import profileImg from "../assets/profileImg.png";
 import img from "../assets/portfolio_img.png";
 import { FiDownload } from "react-icons/fi";
-import resume from "../assets/assets/Ashish_Akteri_Resume.pdf";
+import resume from "../assets/Ashish_Akteri_Resume.pdf";
 
 function Home() {
   return (
